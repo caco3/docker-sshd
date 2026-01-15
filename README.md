@@ -1,8 +1,3 @@
-[![Pulls](https://shields.beevelop.com/docker/pulls/caco3x/alpine-sshd.svg?style=flat-square)](https://hub.docker.com/r/caco3x/alpine-sshd/)
-[![Stars](https://shields.beevelop.com/docker/stars/caco3x/alpine-sshd.svg?style=flat-square)](https://hub.docker.com/r/caco3x/alpine-sshd/)
-[![Layers](https://shields.beevelop.com/docker/image/layers/caco3x/alpine-sshd/latest.svg?style=flat-square)](https://hub.docker.com/r/caco3x/alpine-sshd/)
-[![Size](https://shields.beevelop.com/docker/image/image-size/caco3x/alpine-sshd/latest.svg?style=flat-square)](https://hub.docker.com/r/caco3x/alpine-sshd/)
-
 ## Make your OpenSSH fly on Alpine
 
 ### Overview
