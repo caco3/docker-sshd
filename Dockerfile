@@ -3,10 +3,8 @@ FROM        alpine:${ALPINE_VERSION}
 
 LABEL       maintainer="https://github.com/caco3"
 
-ARG         OPENSSH_VERSION="latest"
 ENV         CONF_VOLUME="/conf.d"
-ENV         OPENSSH_VERSION="${OPENSSH_VERSION}" \
-            CACHED_SSH_DIRECTORY="${CONF_VOLUME}/ssh" \
+ENV         CACHED_SSH_DIRECTORY="${CONF_VOLUME}/ssh" \
             AUTHORIZED_KEYS_VOLUME="${CONF_VOLUME}/authorized_keys" \
             ROOT_KEYPAIR_LOGIN_ENABLED="false" \
             ROOT_LOGIN_UNLOCKED="false" \
