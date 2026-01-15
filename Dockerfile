@@ -1,9 +1,9 @@
-ARG         ALPINE_VERSION="${ALPINE_VERSION:-3.15}"
+ARG         ALPINE_VERSION="latest"
 FROM        alpine:${ALPINE_VERSION}
 
-LABEL       maintainer="https://github.com/hermsi1337"
+LABEL       maintainer="https://github.com/caco3"
 
-ARG         OPENSSH_VERSION="${OPENSSH_VERSION:-8.8_p1-r1}"
+ARG         OPENSSH_VERSION="latest"
 ENV         CONF_VOLUME="/conf.d"
 ENV         OPENSSH_VERSION="${OPENSSH_VERSION}" \
             CACHED_SSH_DIRECTORY="${CONF_VOLUME}/ssh" \
