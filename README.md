@@ -14,11 +14,9 @@ For recent versions check [Dockerhub](https://hub.docker.com/repositories/caco3x
 #### Docker Compose
 See example in [docker-compose.yaml](docker-compose.yaml)
 
-
 #### Environment variables
 
-| Variable | Possible Values | Explanation |
-|:-----------------:|:-----------------:|:------------------------------------------------------------------------------------------------------------------------------------:|
-| USER_UID | any valid UID | User ID for the backintime user (should match the target system, run `id -u backintime` on the target system to get it) |
-| USER_GID | any valid GID | Group ID for the backintime user (should match the target system, run `id -g backintime` on the target system to get it) |
-| PUBLIC_KEY | SSH public key string | SSH public key for backintime user authentication (required) |
+| Variable | Explanation |
+|:-----------------:|:------------------------------------------------------------------------------------------------------------------------------------:|
+| USERNAME | Username on the host system and SSH, usually backintime |
+| PUBLIC_KEY | SSH public key for user authentication |

@@ -101,22 +101,36 @@ fi
 
 printf "\n"
 
-log "Applying configuration for backintime user ..."
+log "Applying configuration for ${USERNAME} user ..."
 
-USER_NAME="backintime"
-USER_UID="${USER_UID:-1009}"
-USER_GID="${USER_GID:-100}"
+USER_NAME="${USERNAME:-backintime}"
+
+# Parse UID and GID from /passwd (mounted /etc/passwd from host)
+if [[ -f "/passwd" ]]; then
+    USER_INFO=$(grep "^${USER_NAME}:" /passwd)
+    if [[ -n "${USER_INFO}" ]]; then
+        USER_UID=$(echo "${USER_INFO}" | cut -d ':' -f 3)
+        USER_GID=$(echo "${USER_INFO}" | cut -d ':' -f 4)
+        log "    user: ${USER_NAME}, UID: ${USER_UID}, GID: ${USER_GID}"
+    else
+        log "error" "    user '${USER_NAME}' not found in /passwd!"
+        exit 1
+    fi
+else
+    log "error" "    /passwd not mounted or not accessible!"
+    exit 1
+fi
 
 USER_GROUP="${USER_NAME}"
 if getent group "${USER_GID}" &>/dev/null ; then 
     USER_GROUP="$(getent group "${USER_GID}" | cut -d ':' -f 1)"
-    log "warning" "    desired GID is already present in system. Using the present group-name - GID: '${USER_GID}' GNAME: '${USER_GROUP}'"
+    log "    desired GID is already present in system. Using the present group-name - GID: '${USER_GID}' GNAME: '${USER_GROUP}'"
 else
     addgroup -g "${USER_GID}" "${USER_GROUP}"
 fi
 
 if getent passwd "${USER_NAME}" &>/dev/null ; then
-    log "warning" "    user '${USER_NAME}' already exists in system"
+    log "    user '${USER_NAME}' already exists in system - UID: '${USER_UID}' GID: '${USER_GID}' GNAME: '${USER_GROUP}'"
 else
     adduser -s "${USER_LOGIN_SHELL}" -D -u "${USER_UID}" -G "${USER_GROUP}" "${USER_NAME}"
     log "    user '${USER_NAME}' created - UID: '${USER_UID}' GID: '${USER_GID}' GNAME: '${USER_GROUP}'"
