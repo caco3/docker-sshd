@@ -7,9 +7,9 @@ Run this container on your backup target and no longer rely on the natively inst
 
 This image is based on the work of [https://github.com/Hermsi1337/docker-sshd](https://github.com/Hermsi1337/docker-sshd).
 
-### Tags
+### Dockerhub
 
-For recent tags check [Dockerhub](https://hub.docker.com/r/caco3x/backintime-sshd/tags/).
+For recent versions check [Dockerhub](https://hub.docker.com/repositories/caco3x/backintime-sshd/).
 
 #### Docker Compose
 See example in [docker-compose.yaml](docker-compose.yaml)
