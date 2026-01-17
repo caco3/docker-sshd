@@ -111,3 +111,9 @@ The next steps only apply if you already have existing [Back In Time](https://gi
     - Key: `/path/to/the/id_rsa/file`
 
     ![General Settings](doc/backintime-settings-general.png)
+
+# Limitations
+Since the public SSH key gets provided through the Docker compose configuration, it is not possible for [Back In Time](https://github.com/bit-team/backintime) to transmit it on the initial setup.
+
+![Not supported](doc/not-supported.png)
+
