@@ -122,4 +122,5 @@ Since the public SSH key gets provided through the Docker compose configuration,
 
 ![Not supported](doc/not-supported.png)
 
+
 How ever this is not required anyway when the docker container is setup correctly.
