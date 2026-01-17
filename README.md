@@ -23,7 +23,7 @@ See example in [docker-compose.yaml](docker-compose.yaml)
 
 
 ### Data Persistance
-> **Warning**
+> [!CAUTION]
 > It is crutial to make sure that the `backintime` folder is mapped onto the remote hosts filesystem! Disregarding this means that you will lose your data when you delete the docker container! Use the remote hosts filebrowser to validate the new backups are effectively there!
 
 # Preparations on your remote host
