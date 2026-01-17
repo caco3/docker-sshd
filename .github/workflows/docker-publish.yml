@@ -2,11 +2,10 @@ name: CI/CD - Application with Docker
 
 on:
   push:
-    branches: [ '**' ]
+    branches: [main]
   pull_request:
-    branches: [ '**' ]
+    branches: [main]
     types: [opened, synchronize, reopened]
-  
 
 jobs:
   build-test-push:
