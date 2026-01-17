@@ -21,6 +21,11 @@ See example in [docker-compose.yaml](docker-compose.yaml)
 | USERNAME | Username on the remote host system and SSH, usually `backintime` |
 | PUBLIC_KEY | SSH public key for user authentication |
 
+
+### Data Persistance
+> **Warning**
+> It is crutial to make sure that the `backintime` folder is mapped onto the remote hosts filesystem! Disregarding this means that you will lose your data when you delete the docker container! Use the remote hosts filebrowser to validate the new backups are effectively there!
+
 # Preparations on your remote host
 The remote host is where your backups will be stored, eg. a designated Linux machine or a NAS. See the [Back In Time documentation](https://backintime.readthedocs.io/en/latest/#ssh) for details.
 

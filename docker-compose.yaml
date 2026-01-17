@@ -14,5 +14,6 @@ services:
       - ./ssh:/etc/ssh
       - /etc/passwd:/passwd:ro
       # Map the backup files into the folder "backintime" of the user "backintime" 
+      # This is crutial since the backup data else only is stored in the docker container and gets lost once you delete it!
       - /volume1/backintime:/home/backintime/backintime
   
