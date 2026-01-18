@@ -158,6 +158,9 @@ if [[ -e "${LOCAL_AUTHORIZED_KEYS}" ]]; then
     log "    disabled password authentication for key-based login"
 fi
 
+# Make sure the access rights are correct
+chmod 700 /etc/ssh -R
+
 printf "\n"
 
 echo ""
